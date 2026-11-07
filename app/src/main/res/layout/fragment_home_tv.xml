@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/primaryGrayBackground">
+
+    <FrameLayout
+        android:id="@+id/home_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/home_loading_shimmer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="60dp"
+            android:orientation="vertical"
+            app:shimmer_auto_start="true"
+            app:shimmer_base_alpha="0.2"
+            app:shimmer_duration="@integer/loading_time"
+            app:shimmer_highlight_alpha="0.3">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:alpha="0.25"
+                    app:cardBackgroundColor="@color/grayShimmer"
+                    app:cardCornerRadius="@dimen/rounded_image_radius" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/result_padding"
+                    android:layout_marginTop="@dimen/result_padding"
+                    android:layout_marginEnd="@dimen/result_padding"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/loading_list" />
+                    <include layout="@layout/loading_list" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/home_loading_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/home_reload_connectionerror"
+            style="@style/WhiteButton"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:minWidth="200dp"
+            android:text="@string/reload_error"
+            app:icon="@drawable/ic_baseline_autorenew_24" />
+
+        <TextView
+            android:id="@+id/home_error_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:textColor="?attr/textColor" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_master_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:descendantFocusability="afterDescendants"
+        android:paddingTop="48dp"
+        android:paddingBottom="24dp"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/homepage_parent_tv"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/home_empty_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/no_results"
+        android:textColor="?attr/grayTextColor"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+    <TextClock
+        android:id="@+id/home_clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_margin="14dp"
+        android:fontFamily="@font/google_sans"
+        android:format12Hour="hh:mm a"
+        android:format24Hour="HH:mm"
+        android:gravity="start"
+        android:maxWidth="600dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/home_api_holder"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="end"
+        android:layout_margin="10dp"
+        android:background="@drawable/player_button_tv_attr"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/home_change_api"
+            style="@style/RegularButtonTV"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:background="@drawable/player_button_tv_attr_no_bg"
+            android:gravity="center"
+            android:nextFocusLeft="@id/navigation_home"
+            android:nextFocusDown="@id/home_master_recycler"
+            tools:text="StreamingCommunity" />
+
+        <ImageView
+            android:id="@+id/home_preview_reload_provider"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="@drawable/player_button_tv_attr_no_bg"
+            android:contentDescription="@string/reload_provider"
+            android:focusable="true"
+            android:padding="10dp"
+            android:src="@drawable/ic_refresh"
+            app:tint="@color/player_on_button_tv_attr" />
+
+        <ImageView
+            android:id="@+id/home_preview_search_button"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="@drawable/player_button_tv_attr_no_bg"
+            android:clickable="true"
+            android:contentDescription="@string/search"
+            android:focusable="true"
+            android:padding="10dp"
+            android:src="@drawable/search_icon"
+            app:tint="@color/player_on_button_tv_attr" />
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/searchRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/primaryGrayBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/primaryGrayBackground"
+            android:orientation="vertical"
+            android:paddingBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/voice_search"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="14dp"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/search"
+                    android:src="@drawable/ic_mic"
+                    android:visibility="gone"
+                    app:tint="?attr/textColor" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/search_background">
+
+                    <androidx.appcompat.widget.SearchView
+                        android:id="@+id/main_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:iconifiedByDefault="false"
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        android:nextFocusLeft="@id/navigation_search"
+                        android:nextFocusDown="@id/search_autofit_results"
+                        android:paddingStart="-10dp"
+                        app:closeIcon="@drawable/ic_baseline_close_24"
+                        app:iconifiedByDefault="false"
+                        app:queryBackground="@color/transparent"
+                        app:queryHint="@string/search_hint"
+                        app:searchIcon="@drawable/search_icon"
+                        tools:ignore="RtlSymmetry">
+
+                        <requestFocus />
+                    </androidx.appcompat.widget.SearchView>
+                </FrameLayout>
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fadingEdge="horizontal"
+                android:requiresFadingEdge="horizontal">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/search_type_group"
+                    style="@style/ChipParent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:descendantFocusability="afterDescendants"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/search_type_all"
+                        style="@style/ChipFilled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/all_providers" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/search_type_movies"
+                        style="@style/ChipFilled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/content_movie" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/search_type_tv"
+                        style="@style/ChipFilled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/content_tv" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/search_type_anime"
+                        style="@style/ChipFilled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/content_anime" />
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/search_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="6dp"
+            android:textColor="?attr/grayTextColor"
+            android:textSize="14sp"
+            android:visibility="gone"
+            tools:text="Cerco su StreamingCommunity…"
+            tools:visibility="visible" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_autofit_results"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/primaryBlackBackground"
+            android:clipToPadding="false"
+            android:descendantFocusability="afterDescendants"
+            android:nextFocusLeft="@id/navigation_search"
+            android:paddingStart="10dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="40dp"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="7"
+            tools:listitem="@layout/search_result_grid" />
+
+        <TextView
+            android:id="@+id/search_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/no_results"
+            android:textColor="?attr/grayTextColor"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/search_loading"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </LinearLayout>
+</FrameLayout>

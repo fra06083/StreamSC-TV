@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">StreamSC TV</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_search">Cerca</string>
+    <string name="library">Libreria</string>
+    <string name="title_downloads">Estensioni</string>
+    <string name="title_settings">Impostazioni</string>
+
+    <string name="search_hint">Cerca film, serie, anime…</string>
+    <string name="search">Cerca</string>
+    <string name="reload_error">Ricarica</string>
+    <string name="reload_provider">Aggiorna provider</string>
+    <string name="coming_soon">In arrivo</string>
+    <string name="no_results">Nessun risultato</string>
+    <string name="no_episodes_found">Nessun episodio trovato</string>
+    <string name="no_providers">Nessun provider abilitato</string>
+
+    <string name="select_profile">Chi sta guardando?</string>
+    <string name="profile_hint">Usa il telecomando per scegliere un profilo</string>
+    <string name="add_profile">Aggiungi profilo</string>
+    <string name="edit_profile">Modifica profilo</string>
+    <string name="delete_profile">Elimina profilo</string>
+    <string name="profile_name">Nome profilo</string>
+    <string name="profile_choose_avatar">Scegli un avatar</string>
+    <string name="save">Salva</string>
+    <string name="cancel">Annulla</string>
+    <string name="delete">Elimina</string>
+    <string name="ok">OK</string>
+    <string name="back">Indietro</string>
+    <string name="close">Chiudi</string>
+
+    <string name="continue_watching">Continua a guardare</string>
+    <string name="favorites">Preferiti</string>
+    <string name="favorite">Preferito</string>
+    <string name="remove_favorite">Rimuovi dai preferiti</string>
+    <string name="add_favorite">Aggiungi ai preferiti</string>
+    <string name="resume">Riprendi</string>
+    <string name="play">Riproduci</string>
+    <string name="play_movie">Film</string>
+    <string name="episodes">Episodi</string>
+    <string name="episode">Episodio</string>
+    <string name="season">Stagione</string>
+    <string name="pick_source">Scegli sorgente</string>
+    <string name="pick_subtitle">Sottotitoli</string>
+    <string name="source">Sorgente</string>
+    <string name="subtitles">Sottotitoli</string>
+    <string name="no_subtitles">Nessun sottotitolo</string>
+    <string name="off">Disattivati</string>
+    <string name="loading">Caricamento…</string>
+    <string name="error_generic">Si è verificato un errore</string>
+    <string name="error_network">Controlla la connessione e riprova</string>
+    <string name="retry">Riprova</string>
+    <string name="skip_loading">Salta</string>
+    <string name="random">Sorprendimi</string>
+
+    <string name="extensions">Estensioni</string>
+    <string name="extensions_installed">Installate</string>
+    <string name="extensions_enabled">Abilitate</string>
+    <string name="extensions_sync">Sincronizza da GitHub</string>
+    <string name="extensions_install_url">Installa da URL</string>
+    <string name="extensions_url_hint">URL ZIP .scext</string>
+    <string name="extensions_empty">Nessuna estensione installata</string>
+    <string name="extensions_updated">Estensioni aggiornate</string>
+    <string name="extensions_install_ok">Estensione installata</string>
+    <string name="extensions_install_fail">Installazione non riuscita</string>
+    <string name="extension_enabled">Abilitata</string>
+    <string name="extension_disabled">Disabilitata</string>
+    <string name="extension_delete_confirm">Eliminare questa estensione?</string>
+    <string name="extension_status_ok">OK</string>
+    <string name="extension_status_slow">Lento</string>
+    <string name="extension_status_down">Non disponibile</string>
+    <string name="extension_status_beta">Beta</string>
+
+    <string name="settings_profile">Profilo</string>
+    <string name="settings_switch_profile">Cambia profilo</string>
+    <string name="settings_playback">Riproduzione</string>
+    <string name="settings_prefer_hls">Preferisci HLS</string>
+    <string name="settings_autoplay_next">Riproduci episodio successivo</string>
+    <string name="settings_about">Informazioni</string>
+    <string name="settings_version">Versione</string>
+    <string name="settings_attribution">Grafica TV basata su CloudStream (GPL-3.0)</string>
+    <string name="settings_clear_history">Cancella cronologia</string>
+    <string name="settings_clear_history_confirm">Cancellare tutta la cronologia di questo profilo?</string>
+    <string name="settings_cache_cleared">Cache cancellata</string>
+
+    <string name="player_error">Impossibile riprodurre questo contenuto</string>
+    <string name="player_next">Prossimo episodio</string>
+    <string name="player_previous">Episodio precedente</string>
+    <string name="player_sources">Sorgenti</string>
+    <string name="player_quality">Qualità</string>
+    <string name="player_resume_from">Riprendi da %1$s</string>
+    <string name="player_now_playing">In riproduzione</string>
+
+    <string name="content_movie">Film</string>
+    <string name="content_tv">Serie TV</string>
+    <string name="content_anime">Anime</string>
+    <string name="year">Anno</string>
+    <string name="rating">Voto</string>
+    <string name="cast">Cast</string>
+    <string name="genres">Generi</string>
+    <string name="description">Trama</string>
+    <string name="provider">Provider</string>
+    <string name="all_providers">Tutti i provider</string>
+    <string name="select_provider">Scegli provider</string>
+    <string name="search_all">Cerca su tutti i provider abilitati</string>
+    <string name="loading_more">Caricamento…</string>
+    <string name="end_of_list">Fine</string>
+
+    <string name="profile_switch_title">Cambia profilo</string>
+    <string name="profile_deleted">Profilo eliminato</string>
+    <string name="profile_last_one">Deve rimanere almeno un profilo</string>
+    <string name="profile_name_required">Inserisci un nome</string>
+    <string name="profile_delete_confirm">Eliminare questo profilo?</string>
+
+    <string name="tv_no_focus_tag">tv_no_focus_tag</string>
+    <string name="search_poster_img_des">Copertina</string>
+    <string name="result_poster_img_des">Copertina del titolo</string>
+    <string name="episode_poster_img_des">Copertina episodio</string>
+    <string name="account">Profilo</string>
+    <string name="manage_accounts">Gestisci profili</string>
+    <string name="change_providers_img_des">Cambia provider</string>
+    <string name="preview_background_img_des">Anteprima</string>
+    <string name="go_back">Indietro</string>
+    <string name="result_open_in_browser">Apri nel browser</string>
+
+    <string name="quality_hd">HD</string>
+    <string name="quality_4k">4K</string>
+    <string name="filler">Filler</string>
+    <string name="vpn_torrent"></string>
+    <string name="provider_info_meta"></string>
+    <string name="add_sync"></string>
+    <string name="recommended">Consigliati</string>
+    <string name="play_trailer_button">Trailer</string>
+    <string name="type_none"></string>
+    <string name="action_subscribe"></string>
+    <string name="movies_singular">Film</string>
+    <string name="home_random">Sorprendimi</string>
+    <string name="is_adult">18+</string>
+</resources>

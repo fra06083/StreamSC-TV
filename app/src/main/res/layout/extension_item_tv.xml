@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/extension_item_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/outline_drawable"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="12dp">
+
+    <ImageView
+        android:id="@+id/extension_icon"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="16dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/app_icon" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/extension_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/textColor"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            tools:text="StreamingCommunity" />
+
+        <TextView
+            android:id="@+id/extension_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="?attr/grayTextColor"
+            android:textSize="13sp"
+            tools:text="Film e serie TV da StreamingCommunity" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/extension_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:textColor="?attr/grayTextColor"
+                android:textSize="12sp"
+                tools:text="v42" />
+
+            <TextView
+                android:id="@+id/extension_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/grayTextColor"
+                android:textSize="12sp"
+                tools:text="OK" />
+
+            <TextView
+                android:id="@+id/extension_language"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textColor="?attr/grayTextColor"
+                android:textSize="12sp"
+                tools:text="it" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/extension_enabled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/extension_enabled"
+        app:thumbTint="?attr/white"
+        app:trackTint="?attr/colorPrimary" />
+
+    <ImageView
+        android:id="@+id/extension_delete"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_gravity="center_vertical"
+        android:background="?selectableItemBackgroundBorderless"
+        android:contentDescription="@string/delete"
+        android:focusable="true"
+        android:padding="9dp"
+        android:src="@drawable/ic_baseline_delete_outline_24"
+        app:tint="?attr/grayTextColor" />
+</LinearLayout>

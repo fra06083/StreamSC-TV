@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/homeRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.navigationrail.NavigationRailView
+            android:id="@+id/nav_rail_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="?attr/primaryGrayBackground"
+            android:descendantFocusability="afterDescendants"
+            android:maxWidth="@dimen/nav_rail_view_width"
+            android:minWidth="@dimen/nav_rail_view_width"
+            app:collapsedItemMinHeight="0dp"
+            app:expanded="false"
+            app:expandedItemMinHeight="0dp"
+            app:expandedMaxWidth="220dp"
+            app:itemActiveIndicatorStyle="@style/CustomIndicator"
+            app:itemIconSize="24dp"
+            app:itemIconTint="@color/item_select_color_tv"
+            app:itemMinHeight="0dp"
+            app:itemPaddingBottom="0dp"
+            app:itemPaddingTop="0dp"
+            app:itemSpacing="12dp"
+            app:itemTextColor="@color/item_select_color_tv"
+            app:labelVisibilityMode="unlabeled"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:menu="@menu/bottom_nav_menu"
+            app:menuGravity="center">
+
+            <include layout="@layout/rail_footer" />
+
+        </com.google.android.material.navigationrail.NavigationRailView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
